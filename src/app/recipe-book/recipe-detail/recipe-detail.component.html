@@ -12,11 +12,27 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    Description
+    <img [src]="selectedRecipe.imageUrl" [alt]="selectedRecipe.title" height="300px">
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
-    Ingredients
+    <h1>{{selectedRecipe.title}}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h2>{{selectedRecipe.description}}</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group">
+      @for (ingredient of selectedRecipe.ingredients; track ingredient){
+        <a class="list-group-item" style="cursor: pointer;">
+          {{ingredient.name}} ({{ingredient.amount}} {{ingredient.unit}})
+        </a>
+      }
+    </ul>
   </div>
 </div>

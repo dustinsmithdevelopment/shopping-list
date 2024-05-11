@@ -5,18 +5,6 @@
 </div>
 <hr>
 @for (recipe of recipes; track recipe){
-  <div class="row">
-    <div class="col-xs-12">
-      <a href="#" class="list-group-item clearfix">
-      <div class="pull-left">
-        <h4 class="list-group-item-heading">{{ recipe.title }}</h4>
-        <p class="list-group-item-text">{{ recipe.description }}</p>
-      </div>
-      <span class="pull-right">
-      <img [src]="recipe.imageUrl" class="img-responsive" style="max-height: 50px;" alt="Recipe Image">
-    </span>
-    </a>
-    </div>
-  </div>
+  <app-recipe-item [recipeItem]="recipe" (click)="SelectRecipe(recipe)"></app-recipe-item>
 }
 
